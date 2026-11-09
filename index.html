@@ -112,7 +112,8 @@ details summary::-webkit-details-marker { display: none; }
 details summary::before { content: "+"; font-weight: 400; width: 0.8em; display: inline-block; }
 details[open] summary::before { content: "\2212"; }
 details .body { margin: 10px 0 4px; padding-left: 14px; border-left: 1px solid var(--rule); color: var(--ink); max-width: 66ch; }
-details .body p { margin: 0; }
+details .body p { margin: 0; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+@media (max-width: 520px) { details .body p { text-align: left; } }
 .toggles { display: flex; flex-wrap: wrap; gap: 4px 22px; }
 .toggles details[open] { flex-basis: 100%; }
 .award { font-size: 0.92rem; color: var(--ink); }
