@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anna Zsofia Csiky</title>
+<meta name="description" content="Anna Zsofia Csiky, Assistant Professor of Finance at WU Vienna. Research on financial intermediation, delegated portfolio management and behavioral finance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;500;600&display=swap">
+<style>
+/* Layout: a quiet two-column academic page. Left: portrait, name, contact (sticky on wide screens).
+   Right: research, teaching, references. Stacks to one column on phones. */
+:root {
+  --bg: #ffffff;
+  --ink: #12161d;
+  --muted: #5a6476;
+  --navy: #1b3461;
+  --rule: #dfe3ea;
+  --tint: #f4f6f9;
+  --font-name: "Cormorant SC", "Cormorant Garamond", Georgia, serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e131c; --ink: #e7eaf0; --muted: #a0a9b8; --navy: #a9bfe6;
+    --rule: #263042; --tint: #151c28; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e131c; --ink: #e7eaf0; --muted: #a0a9b8; --navy: #a9bfe6;
+  --rule: #263042; --tint: #151c28; color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--navy); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-block: 56px 40px;
+  padding-left: max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 64px;
+}
+
+/* ---------- Profile column ---------- */
+.profile { position: sticky; top: calc(32px + env(safe-area-inset-top, 0px)); align-self: start; display: grid; gap: 18px; }
+.portrait { width: 100%; max-width: 200px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 18%; display: block; border-radius: 3px; align-self: start; }
+.name { font-family: var(--font-name); font-weight: 600; font-size: 2.15rem; line-height: 1.05; letter-spacing: 0.01em; margin: 6px 0 0; text-wrap: balance; }
+.role { margin: 0; color: var(--muted); font-size: 0.98rem; line-height: 1.45; }
+.role strong { color: var(--ink); font-weight: 400; display: block; }
+.contact { display: grid; gap: 4px; font-size: 0.95rem; padding-top: 14px; border-top: 1px solid var(--rule); }
+.contact .addr { color: var(--muted); line-height: 1.45; }
+.contact .email { font-family: var(--font-sans); word-break: break-all; }
+.jm { margin: 8px 0 0; display: inline-block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bg); background: var(--navy); padding: 3px 9px; border-radius: 2px; }
+.news { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 66ch; }
+.news li { position: relative; padding-left: 18px; font-size: 0.98rem; }
+.news li::before { content: ""; position: absolute; left: 2px; top: 0.7em; width: 6px; height: 6px; background: var(--navy); border-radius: 50%; }
+.quick { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 14px; border-top: 1px solid var(--rule); }
+.quick a {
+  font-size: 0.86rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none;
+  border: 1px solid var(--navy); color: var(--navy); padding: 5px 11px; border-radius: 2px;
+}
+.quick a:hover { background: var(--navy); color: var(--bg); }
+
+/* ---------- Content column ---------- */
+main { min-width: 0; display: grid; gap: 56px; }
+nav.top { display: flex; gap: 22px; flex-wrap: wrap; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+nav.top a { color: var(--muted); text-decoration: none; }
+nav.top a:hover { color: var(--navy); }
+
+section { display: grid; gap: 22px; scroll-margin-top: 24px; }
+h2 {
+  font-family: var(--font-name); font-weight: 600; font-size: 1.55rem; letter-spacing: 0.03em; margin: 0;
+  padding-bottom: 8px; border-bottom: 1px solid var(--ink); color: var(--ink);
+}
+h3.sub { font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 6px 0 -6px; }
+.lead { font-family: var(--font-serif); font-size: 1.12rem; line-height: 1.65; margin: 0; max-width: 64ch; }
+.lead + .lead { margin-top: -8px; }
+.market {
+  background: var(--tint); border-left: 3px solid var(--navy); padding: 14px 18px; margin: 0;
+  font-size: 0.98rem; max-width: 64ch;
+}
+
+/* Papers */
+.paper { display: grid; gap: 6px; }
+.paper + .paper { padding-top: 22px; border-top: 1px solid var(--rule); }
+.tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); }
+.paper h4 { font-family: var(--font-serif); font-weight: 600; font-size: 1.18rem; line-height: 1.35; margin: 0; text-wrap: balance; }
+.paper h4 a { color: var(--ink); text-decoration: none; }
+.paper h4 a:hover { color: var(--navy); text-decoration: underline; }
+.meta { color: var(--muted); font-size: 0.95rem; margin: 0; }
+.links { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline; font-size: 0.92rem; font-weight: 600; margin-top: 2px; }
+details { font-size: 0.95rem; }
+details summary { cursor: pointer; color: var(--navy); font-weight: 600; list-style: none; display: inline-flex; align-items: center; gap: 6px; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "+"; font-weight: 400; width: 0.8em; display: inline-block; }
+details[open] summary::before { content: "\2212"; }
+details .body { margin: 10px 0 4px; padding-left: 14px; border-left: 1px solid var(--rule); color: var(--ink); max-width: 66ch; }
+details .body p { margin: 0; }
+.toggles { display: flex; flex-wrap: wrap; gap: 4px 22px; }
+.toggles details[open] { flex-basis: 100%; }
+.award { font-size: 0.92rem; color: var(--ink); }
+.award::before { content: "\2605"; color: var(--navy); margin-right: 6px; font-size: 0.85em; }
+
+/* Teaching */
+.entries { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 16px; }
+.entry .what { font-weight: 600; }
+.entry .when { color: var(--muted); font-size: 0.92rem; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.entry .detail { grid-column: 1 / -1; color: var(--muted); font-size: 0.95rem; }
+
+/* References */
+.refs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 32px; }
+.ref { font-size: 0.95rem; line-height: 1.5; }
+.ref .who { font-weight: 600; display: block; width: fit-content; }
+.ref a { text-decoration: none; }
+.ref a:hover { text-decoration: underline; }
+.ref .inst { color: var(--muted); display: block; }
+
+footer { grid-column: 1 / -1; border-top: 1px solid var(--rule); padding-top: 18px; color: var(--muted); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 860px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 32px 28px;
+          padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px)); }
+  .profile { position: static; grid-template-columns: 132px minmax(0, 1fr); column-gap: 20px; align-items: start; }
+  .portrait { grid-row: span 2; aspect-ratio: 4 / 5; height: auto; }
+  .contact, .quick { grid-column: 1 / -1; }
+  .name { font-size: 1.85rem; }
+}
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .profile { grid-template-columns: 104px minmax(0, 1fr); }
+  .refs { grid-template-columns: minmax(0, 1fr); }
+  .entry { grid-template-columns: minmax(0, 1fr); }
+  .entry .when { text-align: left; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+<meta property="og:title" content="Anna Zsofia Csiky">
+<meta property="og:description" content="Assistant Professor of Finance at WU Vienna. Research on financial intermediation and delegated portfolio management.">
+<meta property="og:image" content="img/anna-csiky.jpg">
+</head>
+<body>
+<div class="wrap"><aside class="profile">
+    <img class="portrait" src="img/anna-csiky.jpg" alt="Portrait of Anna Zsofia Csiky" width="640" height="854">
+    <div>
+      <h1 class="name">Anna Zsofia Csiky</h1>
+      <p class="role"><strong>Postdoctoral Researcher in Finance</strong>WU Vienna University of Economics and Business</p>
+      <p class="jm">On the 2026–2027 job market</p>
+    </div>
+    <div class="contact">
+      <span class="email">anna.zsofia.csiky@wu.ac.at</span>
+      <span class="addr">Department of Finance, Accounting and Statistics<br>Institute for Finance, Banking and Insurance<br>Welthandelsplatz 1, 1020 Vienna, Austria</span>
+    </div>
+    <div class="quick">
+      <a href="files/Csiky_JMP.pdf" target="_blank" rel="noopener">Job Market Paper</a>
+      <a href="files/Csiky_CV.pdf" target="_blank" rel="noopener">CV</a>
+    </div>
+  </aside>
+
+  <main>
+    <nav class="top" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#news">News</a>
+      <a href="#references">References</a>
+      <a href="files/Csiky_CV.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+
+    <section id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About</h2>
+      <p class="lead">I am a Postdoctoral Researcher at WU Vienna University of Economics and Business and on the 2026–2027 academic job market. My research centers on financial intermediation, with an emphasis on delegated portfolio management, and draws on elements of behavioral finance.</p>
+    </section>
+
+    <section id="research" aria-labelledby="research-h">
+      <h2 id="research-h">Research</h2>
+      <h3 class="sub">Working Papers</h3>
+
+      <article class="paper">
+        <span class="tag">Job Market Paper</span>
+        <h4><a href="files/Csiky_JMP.pdf" target="_blank" rel="noopener">Systematic Allocation of Mutual Fund Managers</a></h4>
+        <div class="links"><a href="files/Csiky_JMP.pdf" target="_blank" rel="noopener">PDF</a></div>
+        <div class="toggles">
+          <details>
+            <summary>Abstract</summary>
+            <div class="body"><p>This paper investigates whether female portfolio managers are systematically allocated to mutual funds with lower profit-generating value. A unique, hand-collected dataset on the individual characteristics of over 2,100 U.S. equity fund managers shows that, despite similar education and experience profiles across genders, women oversee funds that are older, have lower performance, and collect inferior fee revenues. A comparative matched-pair framework reveals that female fund managers suffer a significant within-firm net-of-style return penalty attributable to allocation practices. Exogenous social and regulatory shocks have divergent impacts on the phenomenon, suggesting that systematic allocation is primarily driven by firm-level strategic placement, with limited indications of managerial self-selection. Furthermore, the paper documents a shielding effect, as female-managed investment vehicles exhibit a lower flow-performance sensitivity, alongside an overrepresentation of female managers leading ESG mutual funds.</p></div>
+          </details>
+          <details>
+            <summary>Presentations</summary>
+            <div class="body"><p>41st Workshop of the Austrian Working Group on Banking and Finance (2026); Academy of Sustainable Finance, Accounting, Accountability and Governance 6th Annual Conference (2026); The Finance Symposium (2026); Vienna Graduate School of Finance PhD Research Seminar (2026)</p></div>
+          </details>
+        </div>
+      </article>
+
+      <article class="paper">
+        <h4><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4986724" target="_blank" rel="noopener">ESG Favoritism in Mutual Fund Families</a></h4>
+        <p class="meta">with Rainer Jankowitsch, Alexander Pasler, and Marti G. Subrahmanyam</p>
+        <div class="links"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4986724" target="_blank" rel="noopener">SSRN</a></div>
+        <div class="toggles">
+          <details>
+            <summary>Abstract</summary>
+            <div class="body"><p>We investigate whether mutual fund families favor their ESG funds at the expense of their non-ESG siblings. We find that the net-of-style return spread of ESG compared to non-ESG funds within the fund family is significantly greater than the gap with non-ESG matches outside the family. The difference is around 2% per year, indicating sizable cross-fund subsidization that is mainly used to avoid underperformance of ESG funds and optimize fee income. We link this performance difference to fund and family characteristics, measures of environmental awareness, and fund flows. Additionally, we investigate potential mechanisms of implementing ESG favoritism.</p></div>
+          </details>
+          <details>
+            <summary>Presentations</summary>
+            <div class="body"><p>American Finance Association Annual Meeting, Poster Session (2026); 65th Annual Meeting of the Southern Finance Association (2025); 31st Annual Meeting of the German Finance Association (2025)*; 37th Australasian Finance and Banking Conference (2024); Massey Sustainable Finance Conference (2024)*; C.r.e.d.i.t. Conference (2024); 39th Workshop of the Austrian Working Group on Banking and Finance (2024); Adam Smith Sustainability Conference (2024)*</p><p class="meta">* presented by coauthor</p></div>
+          </details>
+        </div>
+      </article>
+
+      <article class="paper">
+        <h4><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5205143" target="_blank" rel="noopener">The Influence of Manager Characteristics on Mutual Fund Performance: Does Gender Play a Role?</a></h4>
+        <p class="meta">with Stefan Pichler</p>
+        <div class="links"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5205143" target="_blank" rel="noopener">SSRN</a></div>
+        <div class="toggles">
+          <details>
+            <summary>Abstract</summary>
+            <div class="body"><p>We investigate the impact of manager characteristics, particularly gender, on mutual fund performance. We find that controlling for only such attributes suggests the underperformance of female managers. However, accounting also for fund-specific variables reveals no statistically significant difference in mutual fund excess returns across genders. Our analysis shows that having a graduate degree from an Ivy League university and possessing an MBA both imply enhanced mutual fund performance. Furthermore, we provide evidence on how the performance of female fund managers compares to their male counterparts during the four recent recession periods and amid various market conditions, as well as an analysis of their risk-taking behavior and investment styles.</p></div>
+          </details>
+          <details>
+            <summary>Presentations</summary>
+            <div class="body"><p>16th Annual Financial Markets and Liquidity Conference (2025); European Financial Management Association Annual Meeting (2025); XXVII Applied Economics Meeting (2025)*; Behavioural Finance Working Group 18th Annual Conference (2025); Nova–WU Workshop (2025)*; Vienna Graduate School of Finance PhD Research Seminar (2025)</p><p class="meta">* presented by coauthor</p></div>
+          </details>
+        </div>
+      </article>
+
+      <article class="paper">
+        <h4>Who Navigates the Storm? Manager Features and Mutual Fund Performance under Market Stress</h4>
+        <p class="meta">with Eva Laznik and Stefan Pichler</p>
+        <div class="toggles">
+          <details>
+            <summary>Abstract</summary>
+            <div class="body"><p>We investigate whether manager characteristics predict U.S. equity mutual fund performance during and after market shocks. We identify storm events as S&amp;P 500 declines exceeding four conditional standard deviations under an exponentially weighted moving average volatility model and estimate stacked difference-in-differences specifications over 1984–2022. Using hand-collected manager data, we find that funds led by individuals with professional certifications, such as CFA, earn higher post-storm returns, whereas graduate and Ivy League education confer no comparable advantage. Funds managed by women also earn higher post-storm returns, although this result is less robust across event samples. Older managers reduce market exposure as volatility rises but exhibit poorer market timing and lower post-event returns. Entering the investment industry during a recession predicts differences in portfolio positioning and tail behavior, but not in mean post-storm returns. Overall, our findings show that professional training, demographic characteristics, and formative career experiences help explain cross-sectional differences in how mutual funds navigate market stress.</p></div>
+          </details>
+          <details>
+            <summary>Presentations</summary>
+            <div class="body"><p>The 22nd International Behavioural Finance Conference (2026)*; Vienna Graduate School of Finance PhD Research Seminar (2026)*</p><p class="meta">* presented by coauthor</p></div>
+          </details>
+        </div>
+      </article>
+
+      <div class="links"><a href="files/Csiky_Research_Statement.pdf" target="_blank" rel="noopener">Research Statement (PDF)</a></div>
+    </section>
+
+    <section id="teaching" aria-labelledby="teaching-h">
+      <h2 id="teaching-h">Teaching</h2>
+      <ul class="entries">
+        <li class="entry">
+          <span class="what">Risk Management</span>
+          <span class="when">2021 – 2026</span>
+          <span class="detail">Finance Specialization Course IV, Bachelor's level, WU.</span>
+        </li>
+        <li class="entry">
+          <span class="what">The Art of Teaching Award</span>
+          <span class="when">2024</span>
+          <span class="detail">Digital Teaching Innovations, WU, for co-designing a bring-your-own-device examination in Risk Management.</span>
+        </li>
+        <li class="entry">
+          <span class="what">Thesis Supervision</span>
+          <span class="when">2021 – 2025</span>
+          <span class="detail">Nine bachelor's theses and seven co-supervised master's theses in the MSc Quantitative Finance program, WU.</span>
+        </li>
+      </ul>
+      <div class="links"><a href="files/Csiky_Teaching_Statement.pdf" target="_blank" rel="noopener">Teaching Statement (PDF)</a></div>
+    </section>
+
+    <section id="news" aria-labelledby="news-h">
+      <h2 id="news-h">News</h2>
+      <ul class="news">
+        <li>My job market paper has been accepted for presentation at the 39th Australasian Finance and Banking Conference (AFBC).</li>
+        <li>My job market paper has been accepted for presentation at the 2026 Massey Sustainable Finance Conference.</li>
+      </ul>
+    </section>
+
+    <section id="references" aria-labelledby="references-h">
+      <h2 id="references-h">References</h2>
+      <div class="refs">
+        <div class="ref"><a class="who" href="https://www.wu.ac.at/finance/people/faculty/pichler" target="_blank" rel="noopener">Stefan Pichler</a><span class="inst">Professor of Banking and Finance<br>WU Vienna, VGSF</span><a href="mailto:stefan.pichler@wu.ac.at">stefan.pichler@wu.ac.at</a></div>
+        <div class="ref"><a class="who" href="https://martisubrahmanyam.com/" target="_blank" rel="noopener">Marti G. Subrahmanyam</a><span class="inst">Professor of Finance, Economics and International Business<br>NYU Stern School of Business</span><a href="mailto:ms3@stern.nyu.edu">ms3@stern.nyu.edu</a></div>
+        <div class="ref"><a class="who" href="https://www.wu.ac.at/finance/people/faculty/jankowitsch/" target="_blank" rel="noopener">Rainer Jankowitsch</a><span class="inst">Professor of Finance<br>WU Vienna, VGSF</span><a href="mailto:rainer.jankowitsch@wu.ac.at">rainer.jankowitsch@wu.ac.at</a></div>
+        <div class="ref"><a class="who" href="https://www.novasbe.unl.pt/en/faculty-research/faculty/faculty-detail/id/79/melissa-prado" target="_blank" rel="noopener">Melissa Porras Prado</a><span class="inst">Professor of Finance<br>Nova School of Business and Economics</span><a href="mailto:melissa.prado@novasbe.pt">melissa.prado@novasbe.pt</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Anna Zsofia Csiky</span>
+    <span>Last updated November 2026</span>
+  </footer>
+</div>
+</body>
+</html>
